@@ -1,8 +1,7 @@
 backend:
- 
   name: github
   branch: master
-  repo: decap-11ty-cloudflare-starter
+  repo: dsottimano/decap-11ty-cloudflare-starter
   ### enable below lines for github integration ###
   # name: github
 media_folder: "src/static/img"
@@ -12,7 +11,7 @@ public_folder: "/static/img"
 local_backend: true
   # when accessing the local site from a host other than 'localhost' or '127.0.0.1'
 
-# publish_mode: editorial_workflow
+publish_mode: editorial_workflow
 collections:
   - label: "Blog"
     name: "blog"
