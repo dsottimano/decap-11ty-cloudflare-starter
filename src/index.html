@@ -4,7 +4,8 @@ title: 11ty Decap Cloudflare Starter
 path: home
 ---
 
-<div x-data="home()" x-init="startCMSRotation()" class="container mx-auto lg:h-screen flex flex-col justify-center items-center">
+<div x-data="home()" x-init="startCMSRotation()"
+  class="container mx-auto lg:h-screen flex flex-col justify-center items-center">
   <h1 class="mt-20">
     Welcome to
     <strong class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-green-500">
@@ -15,42 +16,45 @@ path: home
   <p class="text-center text-2xl mb-8">
     <abbr title="alpine, cloudflare ,eleventy, alpine js & tailwind css, decap cms">ACTED</abbr>
     Starter Template in development to rid yourself of the shackles of
-    <p class="text-3xl bg-gray-100 text-green-800 p-1" x-text="currentCMS" class=""></p>
-   
+  <p class="text-3xl bg-gray-100 text-green-800 p-1" x-text="currentCMS" class=""></p>
+
   </p>
 
 
 
 
   {% include "./_includes/partials/content.html" %}
-
-
-  <div class="mt-8 text-center">
-    <p>Credits to pioneers of this project:</p>
-    <ul class="list-disc list-inside">
-      <li><a href="https://github.com/i40west/netlify-cms-cloudflare-pages" class="text-blue-500 hover:underline">i40west/netlify-cms-cloudflare-pages</a></li>
-      <li><a href="https://github.com/SubhenduX/decap-cms-cloudflare-pages" class="text-blue-500 hover:underline">SubhenduX/decap-cms-cloudflare-pages</a></li>
-      <li><a href="https://github.com/surjithctly/neat-starter" class="text-blue-500 hover:underline">surjithctly/neat-starter</a></li>
-    </ul>
-  </div>
-
 </div>
+
+<div class="mt-8 text-center">
+  <p>Credits to pioneers of this project:</p>
+  <ul class="list-disc list-inside">
+    <li><a href="https://github.com/i40west/netlify-cms-cloudflare-pages"
+        class="text-blue-500 hover:underline">i40west/netlify-cms-cloudflare-pages</a></li>
+    <li><a href="https://github.com/SubhenduX/decap-cms-cloudflare-pages"
+        class="text-blue-500 hover:underline">SubhenduX/decap-cms-cloudflare-pages</a></li>
+    <li><a href="https://github.com/surjithctly/neat-starter"
+        class="text-blue-500 hover:underline">surjithctly/neat-starter</a></li>
+  </ul>
+</div>
+
+
 
 
 <script>
   function home() {
-      return {
-          cmsList: ['Wordpress', 'Vercel', 'Drupal', 'Magento', 'Shopify','Wix'],
-          currentCMS: 'Wordpress',
-          index: 0,
-          
-          startCMSRotation() {
-              setInterval(() => {
-                  this.index = (this.index + 1) % this.cmsList.length;
-                  this.currentCMS = this.cmsList[this.index];
-              }, 800);
-          }
+    return {
+      cmsList: ['Wordpress', 'Vercel', 'Drupal', 'Magento', 'Shopify', 'Wix'],
+      currentCMS: 'Wordpress',
+      index: 0,
+
+      startCMSRotation() {
+        setInterval(() => {
+          this.index = (this.index + 1) % this.cmsList.length;
+          this.currentCMS = this.cmsList[this.index];
+        }, 800);
       }
+    }
   }
 
 
