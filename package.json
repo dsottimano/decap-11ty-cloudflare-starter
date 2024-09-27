@@ -1,50 +1,30 @@
 {
-  "name": "patrickgrey",
-  "version": "2.0.0",
-  "description": "Patrick Grey is a web developer in Scotland",
-  "main": "index.js",
   "scripts": {
-    "del": "del-cli website-build",
-    "serve": "cross-env DEV_ENVIRONMENT=dev npx @11ty/eleventy --serve ",
-    "decap": "npx decap-server",
-    "dev": "run-s del serve",
-    "build:11ty": "cross-env DEV_ENVIRONMENT=prod npx @11ty/eleventy",
-    "build:esbuild": "node _back-end/build.mjs",
-    "build:server": "npx @11ty/eleventy-dev-server --dir=website-build",
-    "build": "run-s del build:11ty build:esbuild"
+    "start": "npm-run-all --parallel css eleventy browsersync",
+    "eleventy": "eleventy --watch",
+    "debug": "set DEBUG=* & eleventy",
+    "css": "postcss src/static/css/tailwind.css --o _site/static/css/style.css --watch",
+    "build": "cross-env NODE_ENV=production eleventy && cross-env NODE_ENV=production tailwindcss -i src/static/css/tailwind.css -o _site/static/css/style.css",
+    "browsersync": "browser-sync start --server _site --files _site --port 8080 --no-notify --no-open"
   },
-  "keywords": [],
-  "author": {
-    "name": "Patrick Grey",
-    "email": "websemantic@yahoo.co.uk",
-    "url": "https://patrickgrey.co.uk/"
-  },
-  "license": "ISC",
-  "type": "module",
   "devDependencies": {
-    "@11ty/eleventy": "3.0.0-alpha.20",
-    "@11ty/eleventy-img": "^4.0.2",
-    "@11ty/eleventy-navigation": "^0.3.5",
-    "@11ty/eleventy-plugin-rss": "^2.0.2",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-    "@11ty/eleventy-plugin-vite": "^4.0.0",
-    "@sardine/eleventy-plugin-external-links": "^1.4.0",
+    "@11ty/eleventy": "^1.0.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.3",
+    "@tailwindcss/typography": "^0.5.0",
+    "alpinejs": "^3.7.1",
+    "browser-sync": "^2.27.7",
     "cross-env": "^7.0.3",
-    "cross-var": "^1.1.0",
-    "del-cli": "^5.1.0",
-    "directory-tree": "^3.5.2",
-    "dotenv": "^16.4.5",
-    "dotenv-cli": "^7.4.2",
-    "eleventy-auto-cache-buster": "^0.6.1",
-    "esbuild": "^0.23.1",
-    "lightningcss": "^1.27.0",
-    "luxon": "^3.5.0",
+    "cssnano": "^5.0.15",
+    "html-minifier": "^4.0.0",
+    "js-yaml": "^4.1.0",
+    "luxon": "^2.3.0",
     "npm-run-all": "^4.1.5",
-    "terser": "^5.33.0",
-    "tiny-glob": "^0.2.9"
+    "postcss-cli": "^9.1.0",
+    "prismjs": "^1.26.0",
+    "tailwindcss": "^3.0.13"
   },
   "dependencies": {
-    "decap-cms-app": "^3.3.3",
-    "sharp": "^0.33.5"
+    "autoprefixer": "^10.4.2",
+    "postcss": "^8.4.5"
   }
 }
