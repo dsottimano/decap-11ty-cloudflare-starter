@@ -9,7 +9,7 @@ module.exports = function (eleventyConfig) {
   // Disable automatic use of your .gitignore
   eleventyConfig.setUseGitIgnore(false);
 
-  eleventyConfig.addPlugin(eleventyAutoCacheBuster);
+  // eleventyConfig.addPlugin(eleventyAutoCacheBuster);
   // Merge data instead of overriding
   eleventyConfig.setDataDeepMerge(true);
 
