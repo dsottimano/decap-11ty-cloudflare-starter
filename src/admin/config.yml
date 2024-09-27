@@ -1,9 +1,9 @@
 backend:
   name: github
-  branch: master
   repo: dsottimano/decap-11ty-cloudflare-starter
-  ### enable below lines for github integration ###
-  # name: github
+  branch: main # Branch to update (optional; defaults to master)
+  base_url: https://f8048444.decap-11ty-cloudflare-starter.pages.dev
+  auth_endpoint: /api/auth
 media_folder: "src/static/img"
 public_folder: "/static/img"
 
