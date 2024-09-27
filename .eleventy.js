@@ -2,11 +2,14 @@ const yaml = require("js-yaml");
 const { DateTime } = require("luxon");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const htmlmin = require("html-minifier");
+const eleventyAutoCacheBuster = require("eleventy-auto-cache-buster");
+
 
 module.exports = function (eleventyConfig) {
   // Disable automatic use of your .gitignore
   eleventyConfig.setUseGitIgnore(false);
 
+  eleventyConfig.addPlugin(eleventyAutoCacheBuster);
   // Merge data instead of overriding
   eleventyConfig.setDataDeepMerge(true);
 
