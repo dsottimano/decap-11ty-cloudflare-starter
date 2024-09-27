@@ -5,7 +5,7 @@ path: home
 ---
 
 <div x-data="home()" x-init="startCMSRotation()" class="container mx-auto lg:h-screen flex flex-col justify-center items-center">
-  <h1>
+  <h1 class="mt-20">
     Welcome to
     <strong class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-green-500">
       {{title}}
@@ -19,7 +19,21 @@ path: home
    
   </p>
 
+
+
+
   {% include "./_includes/partials/content.html" %}
+
+
+  <div class="mt-8 text-center">
+    <p>Credits to pioneers of this project:</p>
+    <ul class="list-disc list-inside">
+      <li><a href="https://github.com/i40west/netlify-cms-cloudflare-pages" class="text-blue-500 hover:underline">i40west/netlify-cms-cloudflare-pages</a></li>
+      <li><a href="https://github.com/SubhenduX/decap-cms-cloudflare-pages" class="text-blue-500 hover:underline">SubhenduX/decap-cms-cloudflare-pages</a></li>
+      <li><a href="https://github.com/surjithctly/neat-starter" class="text-blue-500 hover:underline">surjithctly/neat-starter</a></li>
+    </ul>
+  </div>
+
 </div>
 
 
